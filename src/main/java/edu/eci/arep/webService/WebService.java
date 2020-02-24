@@ -42,7 +42,7 @@ public class WebService {
     }
 
     /**
-     * return an png to the user
+     * return an jpg to the user
      *  @param resource is the direction of the resource
      *  @param Output the one that receive the resource
      */
@@ -63,24 +63,22 @@ public class WebService {
     }
 
     /**
-     * return a js to the user
+     * return an png to the user
      *  @param resource is the direction of the resource
      *  @param Output the one that receive the resource
      */
     @Web
-    public static void js(String resource, OutputStream Output) {
+    public static void png(String resource, OutputStream Output) {
 
         try {
-            BufferedReader read = new BufferedReader(new FileReader(System.getProperty("user.dir") + resource));
-            String cont = "";
-            String line;
-            while ((line = read.readLine()) != null) {
-                cont = cont + line;
-            }
-            Output.write(("HTTP/1.1 404 Not Found \r\n"
-                    + "Content-Type: application/json; charset=\"utf-8\" \r\n"
-                    + "\r\n"
-                    + cont).getBytes());
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir") + resource));
+            ByteArrayOutputStream ArrBytes = new ByteArrayOutputStream();
+            DataOutputStream writeimage = new DataOutputStream(Output);
+            ImageIO.write(image, "PNG", ArrBytes);
+            writeimage.writeBytes("HTTP/1.1 200 OK \r\n");
+            writeimage.writeBytes("Content-Type: image/png \r\n");
+            writeimage.writeBytes("\r\n");
+            writeimage.write(ArrBytes.toByteArray());
         } catch (IOException e) {
         }
     }

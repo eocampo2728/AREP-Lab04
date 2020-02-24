@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Arrays;
 
 /**
  * This acts as a server that manage requests
@@ -55,8 +56,8 @@ public class RequestServer implements Runnable{
 
             try {
                 String[] URL = inputLine.split(" ");
-                String [] list = split(URL);
-                if (URL[1].contains("/webService")) {
+                if (URL[1].contains("/WebService")) {
+                    String [] list = split(URL);
                     Class<?> c = Class.forName("edu.eci.arep.webService." + list[0]);
                     for (Method method : c.getMethods()) {
                         if (method.isAnnotationPresent(Web.class)) {
