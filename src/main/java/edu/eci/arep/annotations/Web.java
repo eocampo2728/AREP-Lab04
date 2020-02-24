@@ -5,15 +5,15 @@
  */
 package edu.eci.arep.annotations;
 
-import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Retention;
 
 
 /**
- *
+ * This class create the notation @Web
  * @author eduardo.ocampo
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Web {
-    
+
 }
