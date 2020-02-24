@@ -42,12 +42,12 @@ public class WebService {
     }
 
     /**
-     * return an jpg to the user
+     * return an png to the user
      *  @param resource is the direction of the resource
      *  @param Output the one that receive the resource
      */
     @Web
-    public static void jpg(String resource, OutputStream Output) {
+    public static void png(String resource, OutputStream Output) {
 
         try {
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir") + resource));

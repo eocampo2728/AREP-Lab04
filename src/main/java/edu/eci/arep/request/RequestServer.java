@@ -56,8 +56,8 @@ public class RequestServer implements Runnable{
             try {
                 String[] URL = inputLine.split(" ");
                 String [] list = split(URL);
-                if (URL[1].contains("/WebService")) {
-                    Class<?> c = Class.forName("edu.eci.arep.WebService." + list[0]);
+                if (URL[1].contains("/webService")) {
+                    Class<?> c = Class.forName("edu.eci.arep.webService." + list[0]);
                     for (Method method : c.getMethods()) {
                         if (method.isAnnotationPresent(Web.class)) {
                             if (method.getName().equals(list[2])) {
