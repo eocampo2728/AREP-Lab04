@@ -47,17 +47,17 @@ public class WebService {
      *  @param Output the one that receive the resource
      */
     @Web
-    public static void png(String resource, OutputStream Output) {
+    public static void jpg(String resource, OutputStream Output) {
 
         try {
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir") + resource));
             ByteArrayOutputStream ArrBytes = new ByteArrayOutputStream();
-            DataOutputStream writeimg = new DataOutputStream(Output);
+            DataOutputStream writeimage = new DataOutputStream(Output);
             ImageIO.write(image, "PNG", ArrBytes);
-            writeimg.writeBytes("HTTP/1.1 200 OK \r\n");
-            writeimg.writeBytes("Content-Type: image/png \r\n");
-            writeimg.writeBytes("\r\n");
-            writeimg.write(ArrBytes.toByteArray());
+            writeimage.writeBytes("HTTP/1.1 200 OK \r\n");
+            writeimage.writeBytes("Content-Type: image/png \r\n");
+            writeimage.writeBytes("\r\n");
+            writeimage.write(ArrBytes.toByteArray());
         } catch (IOException e) {
         }
     }
