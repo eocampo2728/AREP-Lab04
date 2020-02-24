@@ -5,11 +5,11 @@ Para usar esta aplicacion es necesario descargar el repositorio de github y pone
 
 ## Heroku
 
-[Link de heroku](https://dashboard.heroku.com/apps/arep-lab03)
+[Link de heroku](https://dashboard.heroku.com/apps/arep-lab04)
 
 ## CircleCi
 
-[![CircleCI](https://circleci.com/gh/eocampo2728/AREP-Lab03.svg?style=svg)](https://circleci.com/gh/eocampo2728/AREP-Lab03)
+[![CircleCI](https://circleci.com/gh/eocampo2728/AREP-Lab04.svg?style=svg)](https://circleci.com/gh/eocampo2728/AREP-Lab04)
 
 ## License
 
